@@ -1,4 +1,5 @@
 from django.contrib.gis import admin
+
 from geocode.models import GeoAddress, GeoData
 
 
@@ -24,5 +25,6 @@ class GeoAddressAdmin(admin.OSMGeoAdmin):
 
     def has_delete_permission(self, *args):
         return False
+
 
 admin.site.register(GeoAddress, GeoAddressAdmin)

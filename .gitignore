@@ -1,5 +1,7 @@
 *.egg-info
 *.pyc
+*.bak
 .env
+.envrc
 gorun_settings.py
 dist

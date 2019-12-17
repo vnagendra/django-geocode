@@ -10,8 +10,8 @@ Django-Geocode is a django app that helps manage geo-coding of model objects..
 
 # Requirements
 
-* Python (2.7, 3.4)
-* Django (1.6, 1.8)
+* Python (3.6+)
+* Django (2.0+)
 
 # Installation
 

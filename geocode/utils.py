@@ -1,6 +1,7 @@
 import math
-from geopy.distance import vincenty
+
 from django.contrib.gis.geos import Point, MultiPoint
+from geopy.distance import vincenty
 
 
 def percentile(data_list, value):
@@ -56,11 +57,11 @@ def calculate_center(points, depth=0):
     max_percentile = max(percentiles) * 0.95
 
     center_points = []
-    center_distences = []
+    center_distances = []
     for i, point_percentile in enumerate(percentiles):
         if point_percentile <= max_percentile:
             center_points.append(points[i])
-            center_distences.append(distances[i])
+            center_distances.append(distances[i])
 
     if len(center_points):
         return calculate_center(center_points, depth=depth + 1)

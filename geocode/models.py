@@ -1,8 +1,8 @@
 from django.contrib.gis.db import models
 from django.contrib.gis.db.models import Q
 from django.contrib.gis.geos import Point
-from django.utils.translation import ugettext_lazy as _
 from django.db.models import UUIDField
+from django.utils.translation import ugettext_lazy as _
 
 from geocode import conf
 from geocode.utils import calculate_center
@@ -85,7 +85,7 @@ class GeoAddress(models.Model):
 
 class GeoData(models.Model):
     created = models.DateTimeField(auto_now_add=True)
-    address = models.ForeignKey(GeoAddress)
+    address = models.ForeignKey(GeoAddress, on_delete=models.CASCADE)
     point = models.PointField(srid=4326)
     tags = models.CharField(max_length=4096)
     weight = models.PositiveIntegerField(default=1)

@@ -46,7 +46,7 @@ version = get_version('geocode')
 if sys.argv[-1] == 'publish':
     os.system("python setup.py sdist upload")
     print("You probably want to also tag the version now:")
-    print("  git tag -a %s -m 'version %s'" % (version, version))
+    print(("  git tag -a %s -m 'version %s'" % (version, version)))
     print("  git push --tags")
     sys.exit()
 
@@ -62,7 +62,7 @@ setup(
     packages=get_packages('geocode'),
     package_data=get_package_data('geocode'),
     test_suite='geocode.runtests.runtests.main',
-    install_requires=['geopy', ],
+    install_requires=['geopy', 'django', 'celery', 'mock'],
     classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Web Environment',

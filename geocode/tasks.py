@@ -1,7 +1,7 @@
 import logging
 
-from geopy.exc import GeopyError
 from celery import shared_task
+from geopy.exc import GeopyError
 
 from geocode import conf
 from geocode.models import GeoAddress
